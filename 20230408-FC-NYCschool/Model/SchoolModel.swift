@@ -7,24 +7,32 @@
 
 import Foundation
 
+// The SchoolModel struct represents the overall model for the application
 struct SchoolModel {
+    
+    // schools stores an array of SchoolCard structs
     var schools: Array<SchoolCard>?
+    
+    // sats stores an array of SatCard structs
     var sats: Array<SatCard>?
+    
+    // categories stores an array of CategoryCard structs, representing the borough categories for schools
     var categories = [CategoryCard(id: 1, type: "Bronx"),
-                    CategoryCard(id: 2, type: "Queens"),
-                    CategoryCard(id: 3, type: "Brooklyn"),
-                    CategoryCard(id: 4, type: "Manhattan")
-                    
-                    ]
+                      CategoryCard(id: 2, type: "Queens"),
+                      CategoryCard(id: 3, type: "Brooklyn"),
+                      CategoryCard(id: 4, type: "Manhattan")]
+    
+    // search stores the search string entered by the user
     var search = ""
-   
+    
+    // The CategoryCard struct represents a single borough category
     struct CategoryCard: Identifiable{
         var id: Int
         var type:String
         var selected: Bool = false
     }
     
-
+    // The SchoolCard struct represents a single school
     struct SchoolCard: Decodable,Identifiable{
         var id:String? {
             return dbn
@@ -50,7 +58,8 @@ struct SchoolModel {
             return Double(latitude ?? "00")
         }
     }
-
+    
+    // The SatCard struct represents SAT data for a single school
     struct SatCard: Decodable,Identifiable {
         var id:String? {
             return dbn
@@ -61,9 +70,9 @@ struct SchoolModel {
         var satCriticalReadingAvgScore: String?
         var satMathAvgScore: String?
         var satWritingAvgScore: String?
-        
     }
     
+    // chooseCategory updates the selected state of a single category based on user interaction
     mutating func chooseCategory(_ category: CategoryCard) {
         for index in categories.indices {
             if categories[index].id == category.id {
@@ -74,9 +83,9 @@ struct SchoolModel {
         }
     }
     
+    // onSearch updates the search string based on user input
     mutating  func onSearch(_ withSearch:String){
         search = withSearch
     }
-    
-    
 }
+

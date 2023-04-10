@@ -7,6 +7,8 @@
 
 import Foundation
 
+// model for fetching data from api
+
 struct School: Decodable,Identifiable{
     var id:String? {
         return dbn

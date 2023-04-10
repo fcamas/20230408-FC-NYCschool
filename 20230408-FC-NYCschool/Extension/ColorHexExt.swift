@@ -9,6 +9,7 @@ import Foundation
 
 import SwiftUI
 
+/// This extension provides a convenient way to create a new Color object from a hexadecimal string,
 extension Color {
     init(hex: String) {
         let scanner = Scanner(string: hex)

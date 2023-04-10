@@ -7,13 +7,8 @@
 
 import SwiftUI
 
-struct DessertCardSizes{
-    var height = UIScreen.main.bounds.height*0.25
-    var width = UIScreen.main.bounds.width*9
-    var corneRadius:CGFloat = 20
-    var shadow:CGFloat = 10
-    var leading: CGFloat = 20
-}
+
+//MainViewSizes hold values for different view sizes and attributes.
 
 struct MainViewSizes{
     
@@ -26,6 +21,7 @@ struct MainViewSizes{
     var cardFrame:CGFloat = 300
 }
 
+//ExpandedViewSizes hold values for different view sizes and attributes.
 struct ExpandedViewSizes{
     
     var minY:CGFloat = 300

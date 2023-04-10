@@ -7,6 +7,7 @@
 
 import Foundation
 
+// model for fetching data from api
 struct Sat: Decodable,Identifiable {
     var id:String? {
         return dbn
